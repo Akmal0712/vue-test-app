@@ -3,7 +3,7 @@
     <l-map style="height: 900px" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker v-for="item in items" :lat-lng="[item.latitude, item.longitude]" :key=item.id>
-        <l-tooltip>{{ item.name }}</l-tooltip>
+        <l-tooltip :options="{ permanent: true, interactive: true }">{{ item.name }}</l-tooltip>
       </l-marker>
     </l-map>
     <div class="navbar">
