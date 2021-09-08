@@ -8,8 +8,7 @@
     </l-map>
     <div class="navbar">
       <h3>Объекты</h3>
-      <label for="search">Поиск</label>
-      <input type="text" v-model="search" id="search"/>
+      <input type="text" v-model="search" id="search" placeholder="Поиск..."/>
       <p v-for="item in filteredItems" :key="item.id" @click="changeCenter(item)">{{ item.name }}</p>
     </div>
   </div>
@@ -129,6 +128,7 @@ export default {
   margin-top: 60px;
 }
 .navbar {
+  text-align: left;
   width: 250px;
   height: 80%;
   background-color: white;
@@ -136,6 +136,7 @@ export default {
   top: 100px;
   right: 100px;
   z-index: 1000;
+  border-radius: 7px;
 }
 
 p {
@@ -143,7 +144,21 @@ p {
   text-align: left;
   padding-left: 15px;
 }
+
+h3 {
+  padding-left: 15px;
+}
 p:hover {
   background-color: aliceblue;
+}
+
+input[type=text] {
+  height: 40px;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0px;
+  background-color: beige;
+  padding-left: 15px;
 }
 </style>
